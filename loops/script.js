@@ -166,13 +166,13 @@
 // question find the first number that is divisible but 7 and 5 using for loop
 // the number will be in between 1 and 500
 
-let count = 0
-for(let i=1; i<=500; i++){
-    if(i%7 === 0 && i%5 ==0){
-        if(count==2){
-            break;
-        }
-        console.log(i)
-        count++;
-    }
-}
+// let count = 0
+// for(let i=1; i<=500; i++){
+//     if(i%7 === 0 && i%5 ==0){
+//         if(count==2){
+//             break;
+//         }
+//         console.log(i)
+//         count++;
+//     }
+// }
