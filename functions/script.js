@@ -84,20 +84,39 @@
 
 
 
-let length1 = 10
-let width11 = 5
+// let length1 = 10
+// let width11 = 5
 
-function area(l,w=100){
-    console.log("l", l)
-    console.log("w", w)
-    console.log(l*w)
-}
-// area(length1, width11)
+// function area(l,w=100){
+//     console.log("l", l)
+//     console.log("w", w)
+//     console.log(l*w)
+// }
+// // area(length1, width11)
 
-let firstName = "pranav"
-let lastName = "raju"
+// let firstName = "pranav"
+// let lastName = "raju"
 
-function fullName(fname,lname="user last name"){
-    console.log(fname + " " + lname)
-}
-fullName(firstName,lastName)
+// function fullName(fname,lname="user last name"){
+//     console.log(fname + " " + lname)
+// }
+// fullName(firstName,lastName)
+
+
+// let length = 10;
+// let width = 20;
+
+// function area(l,w){
+//     console.log("hello 1");
+//     let areaValue = l * w
+//     return areaValue;
+//     // any thing you write
+//     console.log("hello 2");
+
+// }
+
+// let result = area(length,width)
+// let result2 = area(20,5)
+// console.log(result2)
+
+
