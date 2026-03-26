@@ -290,8 +290,48 @@
 
 // ////////////////// revere() //////////////////////
 
-let arr = [1,2,3,4,5,6,7];
-arr.reverse();
-console.log(arr);   //[ 7, 6, 5, 4, 3, 2, 1 ]
+// let arr = [1,2,3,4,5,6,7];
+// arr.reverse();
+// console.log(arr);   //[ 7, 6, 5, 4, 3, 2, 1 ]
 
 
+
+// //////     array declaration methods  //////////
+//method 1 
+// let arr = [1,2,3,4,5];
+
+// method2 using constructor function
+// this is how you declare an array using constructor function
+// let arr = new Array();
+
+// let fruits = new Array("apple", "banana", "orange");
+
+// let arr2 = new Array(5) //[ <5 empty items> ]
+
+
+
+// let fruits = ["apple", "banana", "kiwi"];
+
+// shallow copy
+// let fruits2 = fruits;
+
+// fruits2[1] = "orange";
+// console.log(fruits2) //[ 'apple', 'orange', 'kiwi' ]
+// console.log(fruits) //[ 'apple', 'orange', 'kiwi' ]
+
+// let dataSend =  JSON.stringify(fruits) //converting into JSON string
+// let dataRecieved = JSON.parse(dataSend) //converting into JSON obj
+// console.log(fruits)
+// console.log(dataSend)
+// console.log(dataRecieved)
+
+
+let fruits = ["apple", "banana", "kiwi"];
+
+// this is how you create a Deep copy
+let fruits2 = JSON.parse(JSON.stringify(fruits)); 
+
+fruits2[1] = "orange"
+
+console.log(fruits2)    //[ 'apple', 'orange', 'kiwi' ]
+console.log(fruits)     //
