@@ -41,11 +41,11 @@
 
 
 
-let arr = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-]
+// let arr = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ]
 
 // tasks1: print the elements row wise : 1,2,3,4,5,6,7,8,9
 // tasks2: print the elements column wise : 1,4,7,2,5,8,3,6,9
@@ -88,10 +88,10 @@ let arr = [
 // }
 
 // center element
-for(let i=0; i<3; i++){
-    for(let j=0; j<3; j++){
-        if(i==j && i+j == 2){
-            console.log(arr[i][j])
-        }
-    }
-}
+// for(let i=0; i<3; i++){
+//     for(let j=0; j<3; j++){
+//         if(i==j && i+j == 2){
+//             console.log(arr[i][j])
+//         }
+//     }
+// }
