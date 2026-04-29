@@ -65,7 +65,25 @@
 // console.log(binarySearch(arr, target))
 
 
-// if the target is not present find the left most index where it should be inserted in the array
-let arr = [1,2,3,5,6,7]
-let target = 4 
-// output -> 3
+// // if the target is not present find the left most index where it should be inserted in the array
+// let arr = [1,2,3,5,6,7]
+// let target = 4 
+// // output -> 3
+
+function lowerBound(arr, target){
+    let left = 0;
+    let right = arr.length-1;
+    let result = arr.length;
+
+    while(left <= right){
+        const mid = Math.floor((left + right)/2);
+        if(arr[mid] >= target){
+            result = mid;
+            right = mid -1;
+        }else{
+            left = mid +1;
+        }
+    }
+    return result
+}
+console.log(lowerBound([1,2,3,5], 4));
