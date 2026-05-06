@@ -32,26 +32,26 @@
 // insert the selected elements at the right index
 // repeat till all the unsorted elements are placed in the right.
 
-// function insertionSort(arr){
+function insertionSort(arr){
 
-//     for(let i=1; i<arr.length; i++){
-//         let NIT = arr[i];   //no. to insert
-//         let j = i - 1;      //index of your sorted element
+    for(let i=1; i<arr.length; i++){
+        let NIT = arr[i];   //no. to insert
+        let j = i - 1;      //index of your sorted element
 
-//         // we compare the sorted elements in an array with the NIT
-//         // and trying to find the index where the insertion should take place
-//         // the index is where the sorted element is lesser than the NIT
-//         while(j>=0 && arr[j] > NIT){
-//             arr[j+1] = arr[j];
-//             j = j - 1; //j--
-//         }
-//         arr[j+1] = NIT;     //this where the insertion takes place
-//     }
-// }
+        // we compare the sorted elements in an array with the NIT
+        // and trying to find the index where the insertion should take place
+        // the index is where the sorted element is lesser than the NIT
+        while(j>=0 && arr[j] > NIT){
+            arr[j+1] = arr[j];
+            j = j - 1; //j--
+        }
+        arr[j+1] = NIT;     //this where the insertion takes place
+    }
+}
 
-// let arr = [8, 20, -2, 4, -6];
-// insertionSort(arr);
-// console.log(arr)
+let arr = [8, 20, -2, 4, -6];
+insertionSort(arr);
+console.log(arr)
 
 // best case O(n)
 // worst case O(n^2)
