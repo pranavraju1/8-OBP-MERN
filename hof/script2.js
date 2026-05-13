@@ -126,17 +126,18 @@
 // counter();  //4
 
 
-function ATM (){
-    let pin = 12345; //private
+// function ATM (){
+//     let pin = 12345; //private
     
-    let balance = 5000;
+//     let balance = 5000;
     
-    let accoutNo = 123123123;
+//     let accoutNo = 123123123;
 
-    return function() {
-        return balance
-    }
-}
+//     return function() {
+//         return balance
+//     }
+// }
 
-const seeBalace = ATM();
-console.log(seeBalace());
+// const seeBalace = ATM();
+// console.log(seeBalace());
+
