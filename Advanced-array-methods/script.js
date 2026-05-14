@@ -127,7 +127,80 @@
 // apply search filter
 // lets say user give input ap
 // the filterd list should contain ["apple", "apricot", "grape"]
-const items = ["apple", "banana", "apricot", "orange", "grape"];
-const useInput = "a"
-const filteredItems = items.filter((item) => item.includes(useInput) )
-console.log(filteredItems)
+// const items = ["apple", "banana", "apricot", "orange", "grape"];
+// const useInput = "a"
+// const filteredItems = items.filter((item) => item.includes(useInput) )
+// console.log(filteredItems)
+
+
+
+// Reduce
+// let arr = [1, 2, 3, 4, 5];
+// function sum(arr){
+//     let sum = 0;
+//     for(let i=0; i<arr.length; i++){
+//         sum += arr[i];
+//     }
+//     return sum
+// }
+
+// console.log(sum(arr));
+
+let arr = [1, 2, 3, 4, 5];
+// const result = arr.reduce((acc, current) => {
+//     console.log("current", current)     //current has single values of the array
+//     console.log("acc", acc)             //acc (accumulator) holds the acumulated or sum value
+//    return acc + current
+// } , 10 );
+// console.log(result) //15
+
+// reduce() -> it is used when you want to combine all array elements into a single array
+// Note: if acc value is not initialized it by default will take the 1st value of the array ie. arr[0]
+
+
+// const result = arr.reduce((acc, current) => acc * current , 1)  //120
+
+// task find total price using reduce
+// const cart = [
+//     {item: "shirt", price: 700},
+//     {item: "jeans", price: 1500},
+//     {item: "shoes", price: 2500},
+// ]
+
+// let result = cart.reduce((acc, current) => acc + current.price, 0)
+// console.log(result)
+
+
+let fruits = ["apple", "banana", "apple", "orange", "banana", "apple"]
+// otp -> {"apple": 3, "banana": 2, "orange": 1}
+// taks find frequency
+
+// let result = {}
+// for(let i=0; i<fruits.length; i++){
+//     let word = fruits[i];
+
+//     // if(result[word]){
+//     //     result[word]++
+//     // }else{
+//     //     result[word] = 1
+//     // }
+
+//     // or
+//     result[word] = (result[word] || 0) + 1
+// }
+
+// console.log(result)
+
+// const result = fruits.reduce((acc, current)  => {
+//     acc[current] = (acc[current] || 0) + 1
+//     return acc
+// }, {});
+
+// console.log(result)
+
+
+
+const words = ["Hi", "Pranav", "this", "side"];
+// op -> "Hi Pranav this side" 
+// dont use join method, solve it using reduce
+
