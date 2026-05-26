@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 300px;
+            width: 300px;
+            background-color: pink;
+            padding: 20px;
+            border: 10px solid black;
+
+            /* margin: 30px; */
+
+            box-sizing: border-box;
+            /* box-sizing: content-box; */
+        }
+        .box2{
+            height: 300px;
+            width: 300px;
+            background-color: red;
+        }
+        /* content-box: the final size depends on the padding and border
+            (its added outside the box)
+
+            border-box: the final size includes the padding and border
+        */
+
+
+
+
+
+
+
+
+
+
+        
+        /* 
+        content: things inside the box
+        padding: space b/w content and border
+        border: the line surrounding padding and content
+        margin: space outside the border 
+         */
+         button{
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 20px;
+            /* how to make circle using css */
+            /* border-radius: 50%; */
+            padding: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+         }
+
+
+
+         .box3{
+            height: 300px;
+            width: 100px;
+            background-color: pink;
+            /* display: block; */
+            /* display: inline; */
+            /* display: none; */
+            display: inline-block;
+            margin-right: 20px;
+            padding: 50px;
+         }
+
+         /* display: block;
+            starts on a new line, takes full width by default,
+            width and height can be set
+
+            display: inline;
+            stays in the same line, width and height does not apply,
+            used for short peices of text
+
+            display: inline-block;
+            stays in line and you can assign height and width
+
+            display: none;
+            remove from DOM
+         */
+
+
+
+        .parent{
+            height: 300px;
+            width: 300px;
+            background-color: pink;
+            position: relative;
+            /* z-index: 1000; */
+            /* top: 100px; */
+            /* bottom: ; */
+            /* left: 100px; */
+            /* right: ; */
+        }
+        .child{
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+        /* position static: default value, element stays in normal position
+           position relative: element moves relative to its normal position (original position is reserved)
+           position absolute: element moves relative to its nearest parent  (original space is removed)
+           positon fixed: stays on the same place while scrolling
+           position sticky: scrolls to a fixed position while scrolling
+        */
+
+        :root{
+            --primary-color: #007bff;
+            --text-color: #333;
+            --card-radius: 12px;
+            --spacing: 16px;
+        }
+
+        button{
+            padding: var(--spacing);
+            background-color: var(--primary-color);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="box">
+    </div>
+    <div class="box2"></div> -->
+    <!-- <button>Click me</button> -->
+    <!-- <div class="box3">asd</div>
+    <div class="box3">asd</div> -->
+
+    <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, autem perspiciatis. Qui doloremque laboriosam sapiente laudantium totam dolorem quibusdam ipsa perspiciatis nulla reprehenderit ea possimus odio quisquam debitis labore est quis ipsam quos, magni molestiae aperiam aspernatur? Earum delectus in voluptatem nostrum quo voluptas illo, repellat velit sapiente cumque, fugit repellendus dignissimos a ratione nulla? Saepe quis perspiciatis molestiae officiis corrupti culpa nam placeat sit dolorem, aperiam, quas minima odit possimus recusandae, a numquam ipsam. Mollitia omnis facere quisquam beatae eaque illum maiores rerum unde amet neque, ullam exercitationem, velit commodi consectetur aliquid accusamus accusantium maxime labore itaque! Blanditiis, in nostrum ducimus ratione suscipit assumenda nesciunt nulla harum adipisci. Sed numquam repellendus, voluptate unde ad laboriosam nulla natus impedit totam quidem cum repudiandae, veritatis ipsum deleniti labore suscipit tenetur. Placeat aliquam itaque reiciendis a quisquam aspernatur blanditiis quas! Numquam laudantium debitis velit, itaque aliquam quam voluptates libero deserunt, dignissimos in excepturi voluptate illo at exercitationem iusto consequuntur, quae omnis enim voluptatem fuga labore commodi ipsum. Architecto, id! Praesentium veritatis corporis error assumenda illum, accusamus eligendi, at eius sint earum iure a. Corrupti aliquid, rem sint facilis perspiciatis iure possimus expedita corporis, iusto alias ratione tempora eligendi cum consectetur libero placeat veniam, officia fuga illo praesentium sunt esse quod blanditiis. Quisquam modi expedita explicabo, quis corrupti, suscipit porro eum repellat quas vero iste deserunt dolores placeat eos illum quia! Dolor cumque maiores quibusdam illo doloribus. Maiores dolores voluptate provident rerum quia maxime sit fugiat minima quaerat, ad sunt vitae mollitia accusamus dolor fuga deserunt praesentium quae. Nihil nulla eaque, laborum laboriosam expedita placeat consectetur blanditiis, minima illum impedit quis exercitationem facere odit ab assumenda mollitia illo rem fugit atque. Sunt doloribus obcaecati reprehenderit blanditiis perspiciatis ipsam, quas, beatae modi neque culpa hic. Atque eum fuga voluptatem provident numquam ad ea laudantium qui odit aliquam similique pariatur veritatis ipsum dolorum unde explicabo libero debitis maxime beatae aperiam quod maiores nihil, cupiditate corrupti. Eos ab quisquam ea reiciendis ducimus consequatur, asperiores inventore repellat tenetur quidem dicta quae doloremque dolore explicabo eveniet earum laborum sapiente! Officiis expedita facere ad distinctio facilis aut exercitationem asperiores assumenda consequuntur ab nostrum fugiat incidunt vel accusamus, unde minus eaque! Rerum fugiat voluptatum dolor eaque! Ipsum explicabo iste porro amet ab rerum laborum praesentium doloribus. At ipsam fuga a debitis voluptatibus ex expedita, quasi pariatur autem iusto nostrum veniam esse officiis perspiciatis, aspernatur sunt dolore, repellendus fugiat quae iure porro corporis enim! Deleniti dolores incidunt debitis nulla eos cupiditate voluptatem dignissimos, quo distinctio dolorum dolor nisi quibusdam reiciendis vel architecto accusantium quaerat, accusamus facilis. Soluta modi tempora, optio vel cum eius tempore voluptatum tenetur necessitatibus, facere aspernatur vitae ullam quia, laboriosam dolorum. Magni accusantium corporis ut dolor neque necessitatibus quibusdam consequuntur iusto ab provident, aperiam ea error pariatur quas labore hic. Quaerat iusto magni obcaecati incidunt asperiores et exercitationem aperiam repellat magnam nesciunt laborum doloribus harum, debitis ullam commodi animi repellendus corrupti quia? Ab repellat sed autem suscipit alias consequuntur aliquam illo libero laborum odit assumenda maxime fuga aperiam quae velit, in debitis iusto dolor accusantium accusamus consectetur quisquam. Delectus est pariatur eligendi ratione autem accusantium magni recusandae veritatis aliquam, nihil repellendus ullam dolore blanditiis a voluptatibus exercitationem. Animi reprehenderit, qui magni facere quas aspernatur ex quod earum, magnam eos voluptas id saepe nostrum quis sequi in quaerat voluptatem nihil tempora doloribus obcaecati ullam! Odio, quae ullam? Quisquam rem sed minus assumenda quasi velit necessitatibus ad, dolores vel, cupiditate repellat in? Nesciunt, praesentium. Ipsa, numquam! Quisquam dolor minus repellendus architecto, eveniet perspiciatis tempore placeat sit id natus asperiores voluptatibus aliquid aliquam facilis maiores fugiat, et doloremque? Quasi quas voluptatum saepe magni dolore eveniet ducimus molestias ullam eum a, animi rerum ipsum impedit ratione nostrum nesciunt neque qui nemo officiis quo repudiandae non numquam. Fugit perspiciatis ipsum, illum necessitatibus tempore sequi porro dolor asperiores error tenetur velit, accusamus obcaecati ipsa repudiandae odit sint unde, recusandae fuga cupiditate aperiam non. Eaque quo, quisquam neque similique, consequatur reprehenderit possimus magni eos veritatis culpa est cupiditate inventore voluptates eius itaque unde. Laborum incidunt fugiat ducimus porro qui dolore sapiente possimus maiores aspernatur architecto. Molestias, iste dolorem! Nihil itaque aperiam labore impedit eius incidunt dolorem ducimus minima nulla! Error repellat ab ullam veniam assumenda quibusdam a fuga dignissimos praesentium excepturi illum ducimus nam doloremque dolorum quasi officia, cum maiores aliquid autem nobis, voluptatibus dolorem harum necessitatibus nihil. Quas perferendis voluptatibus, sunt, qui repellendus placeat non nisi in maxime cumque, quis saepe. Nobis perspiciatis ipsa praesentium consequatur ex aperiam fugit quae dolor illo perferendis, alias architecto exercitationem. Modi nulla iusto eaque, earum ratione dolorum quos odit minus est assumenda, nihil esse tenetur quidem totam ea tempora facere deleniti ullam natus magnam, error aliquid fugiat iste. Officia tenetur dicta dolore laudantium nobis sint qui, saepe perferendis delectus. Molestiae reprehenderit eveniet modi repellat officiis in rem aperiam assumenda, impedit similique, nisi fuga quisquam tempora distinctio, pariatur accusamus? Aliquam delectus voluptas similique omnis possimus error aperiam, molestias architecto odit neque et amet rem incidunt laborum optio suscipit explicabo autem quo sequi! Ducimus autem atque numquam voluptas vero odit doloremque adipisci officiis sit ab aliquid libero perspiciatis pariatur est porro minima modi animi, expedita sed. Blanditiis, odio quas dignissimos possimus ipsum non totam molestiae aliquid corporis id impedit error mollitia ut corrupti ea, perferendis natus quos. Rerum numquam, similique nemo necessitatibus itaque vel corporis, quas optio cupiditate nobis doloribus excepturi reprehenderit odio architecto repudiandae eligendi, incidunt ratione quod cum iste commodi corrupti! Aliquam beatae natus aperiam, repellat hic debitis quis. Quia explicabo quisquam quos a quidem, et assumenda dignissimos atque! Repellendus officiis doloremque blanditiis, omnis ullam iste atque sequi ipsam libero, illum perspiciatis explicabo necessitatibus quo? Ut sunt aliquam molestias, omnis iusto deleniti, expedita, consequuntur ea porro beatae repudiandae! Perferendis mollitia molestias deserunt veritatis obcaecati quasi sapiente, earum qui numquam voluptas nobis sunt quisquam doloremque repudiandae nihil iste, fuga quod? Saepe cumque amet ullam dolore veritatis omnis est nobis natus, temporibus assumenda! Explicabo facilis, asperiores, ex error praesentium, eaque consequatur illo nesciunt placeat ad quasi fugiat. Aspernatur, accusamus eveniet?</p>
+    <div class="parent">
+        <div class="child"></div>
+    </div> -->
+
+    <button>Click me</button>
+
+
+</body>
+</html>

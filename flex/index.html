@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-contianer{
+            border: 2px solid black;
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* items stay in one line and if there is not enough space they move to the next line */
+            gap: 10px;
+            height: 500px;
+            width: 100%;
+
+        }
+        .box{
+            background-color: purple;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+            width: fit-content;
+
+        }
+        .special{
+            align-self: end;
+            /* this overrides align-items for specefic item*/
+        }
+
+        .box1{
+            flex-grow: 1;
+        }
+        .box2{
+            flex-grow: 4;
+        }
+        .box3{
+            flex-grow: 2;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box-contianer">
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+    </div>
+
+</body>
+</html>
+
+
+
+<!-- 
+flex in css is used for arranging elements in a row or column and 
+controling the spacing and alignment of these elements
+
+w/o flex arranging items in a page requeries a lot of extra css
+
+main axis: the direction in which the items are layedout 
+cross axis: perpendicular to main axis
+flex-direction: row(defalut): main axis is left to right and cross axis in top to bottom
+flex-direction: column; main axis is top to bottom and cross axis in left to right
+
+
+justify-content: start : items at begining    
+justify-content: center : items at center  
+justify-content: end : items at end  
+justify-content: space-between : spreads across the axis 
+justify-content: space-evenly :  spreads across the axis with even spaces everywhere
+justify-content: space-around : spreads across the axis with even soace in between and some at the edges 
+
+align-items: aligns children in cross axis
+
+Note: to center a div you only need 3 things in its parent 
+1. display: flex;
+2. justify-content: center;
+3. align-items: center;
+
+
+
+
+
+-->
