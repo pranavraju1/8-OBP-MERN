@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* basic attribute selector */
+        input[placeholder]{
+            border: 2px solid black;
+        }
+
+        /*specefic attribute value  */
+        input[type="email"]{
+            border-color: red;
+        }
+
+        /* starts with (^) */
+        a[href^= "https"]{
+            color: green;
+        }
+
+        /* ends with ($) */
+        a[href$= ".com"]{
+            text-decoration: none;
+        }
+
+        /* containes(*) */
+        li[data-level*= "intermediate"]{
+            background-color: aqua;
+        }
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <section id="attribute-selectors">
+        <h2>Attribute Selectors</h2>
+        <a href="https://asdasdsa.com">External Link</a>
+        <a href="/about">Internal About Page</a>
+        <a href="mailto:hello@gmail.com">mail</a>
+        <input type="text"  placeholder="Your name">
+        <input type="email"  placeholder="Your email">
+        <input type="password"  placeholder="Your password">
+        <ul>
+            <li data-level="beginner">HTML</li>
+            <li data-level="intermediate">CSS</li>
+            <li data-level="advanced">JS</li>
+        </ul>
+
+
+    </section>
+</body>
+</html>

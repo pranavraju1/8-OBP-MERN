@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* descendent selector be carefull when you use this */
+        .card p{
+            color: #555;
+        }
+
+        /* child selector: direct children */
+        #combinators > p{
+            font-weight: bold;
+        }
+
+        /*adjacent sbling: first p after h3  */
+        h3 + p {
+            color: purple;
+        }
+
+        /* targets all the next siblings */
+        h3 ~ p{
+            border-left: 4px solid lightgrey;
+            padding-left: 8px;
+        }
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <section id="combinators">
+        <h2>Combinators</h2>
+        
+        <div class="card">
+            <h3>Card Title</h3>
+            <p>Card description inside</p>
+            <button class="primary-btn">Action</button>
+
+            <div>
+                <div>
+                    <div>
+                        <p>something something</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="card">
+            <h3>Another Card</h3>
+            <p>More Content</p>
+            <button>Secondary Action</button>
+        </div>
+    
+        <p>Para outside card</p>
+
+        <h3>Heading 3 tag</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint velit exercitationem modi ex! Neque nobis dignissimos accusamus aut autem cum, nostrum inventore delectus, tempora quod, enim aperiam nam hic consequatur.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea velit sapiente illum fuga autem esse tenetur totam consequuntur quia, saepe tempore unde illo ipsam quae animi, rem sit, magnam aliquam?</p>
+
+        <h3>Heading 3 tag</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea velit sapiente illum fuga autem esse tenetur totam consequuntur quia, saepe tempore unde illo ipsam quae animi, rem sit, magnam aliquam?</p>
+
+
+
+
+    </section>
+
+</body>
+</html>

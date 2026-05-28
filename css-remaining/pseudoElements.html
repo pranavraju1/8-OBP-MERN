@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .badge-btn{
+            position: relative;
+            padding-right: 32px;
+        }
+
+        .badge-btn::after{
+            content: "3";
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background-color: red;
+            padding: 2px 5px;
+            color: white;
+            border-radius: 50%;
+            font-size: 10px;
+        }
+
+        .quote{
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .quote::before{
+            content: "\201C";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            font-size: 32px;
+            color: #ccc;
+        }
+
+        .first-line-demo::first-line{
+            font-weight: bold;
+        }
+
+
+
+
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <section id="psuedo-elements">
+        <h2>Pseudo-elements</h2>
+        <button class="badge-btn">Notifications</button>
+        <p class="quote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat nulla ad aliquid doloribus animi repellendus at aliquam accusantium eveniet! Corrupti temporibus ut ullam architecto quia non tempora assumenda! Reiciendis, quo.</p>
+        <p class="first-line-demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat nulla ad aliquid doloribus animi repellendus at aliquam accusantium eveniet! Corrupti temporibus ut ullam architecto quia non tempora assumenda! Reiciendis, quo.</p>
+    </section>
+</body>
+</html>
