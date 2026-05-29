@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar{
+            background-color: black;
+            padding-inline: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+        }
+        .logo{
+            font-weight: bold;
+            color: white;
+        }
+        .other-elements{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .elements{
+            color: white;
+        }
+        .contactus{
+            background-color: yellow;
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        @media (max-width: 475px) {
+            .navbar{
+                flex-direction: column;
+            }
+            .other-elements{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Logo</div>
+        <div class="other-elements">
+            <div class="elements">About us</div>
+            <div class="elements">Portfolio</div>
+            <div class="elements">Services</div>
+            <div class="contactus">Contact us</div>
+        </div>
+
+    </div>
+</body>
+</html>

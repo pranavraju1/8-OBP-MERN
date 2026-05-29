@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box{
+            padding: 40px;
+            font-style: 24px;
+            background-color: lightcoral;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            font-size: 24px;
+        }
+        
+        @media (min-width: 600px){
+            .box{
+                background-color: steelblue;
+            }
+            h1{
+                font-size: 32px;
+            }
+        }        
+
+        @media (min-width: 900px){
+            .box{
+                background-color: seagreen;
+            }
+            h1{
+                font-size: 40px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="box">Resizing the window to see the color change</div>
+    <h1>Resonsive Heading</h1>
+</body>
+</html>
