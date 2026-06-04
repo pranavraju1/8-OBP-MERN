@@ -1,0 +1,17 @@
+.box {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box .innerbox {
+  height: 25px;
+  width: 25px;
+  background-color: purple;
+}
+#text {
+  background-color: aqua;
+  color: blue;
+}/*# sourceMappingURL=styles.css.map */

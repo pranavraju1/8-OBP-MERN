@@ -1,0 +1,26 @@
+.box{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .innerbox{
+        height: 25px;
+        width: 25px;
+        background-color: purple;
+        .innerinnerbox{
+
+        }
+    }
+}
+
+
+@mixin active{
+    background-color: aqua;
+    color: blue;
+}
+
+#text{
+    @include active;  
+}
