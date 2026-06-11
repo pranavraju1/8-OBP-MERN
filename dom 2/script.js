@@ -88,17 +88,32 @@ let users = [
 // 5    rahul
 
 
-let table = document.querySelector('table');
+// let table = document.querySelector('table');
 
 
-users.map(item=>{
-  let tr = document.createElement('tr');
-  let td1 =  document.createElement('td');
-  td1.textContent = item.id;
-  let td2 =  document.createElement('td');
-  td2.textContent = item.name;
+// users.map(item=>{
+//   let tr = document.createElement('tr');
+//   let td1 =  document.createElement('td');
+//   td1.textContent = item.id;
+//   let td2 =  document.createElement('td');
+//   td2.textContent = item.name;
 
-  tr.appendChild(td1);
-  tr.appendChild(td2);
-  table.appendChild(tr);
-})
+//   tr.appendChild(td1);
+//   tr.appendChild(td2);
+//   table.appendChild(tr);
+// })
+
+let ul = document.querySelector("ul")
+let li = document.createElement("li");
+let p = document.createElement("p")
+p.textContent = "Pranav"
+
+li.textContent = "Banana"
+ul.append(li) //adds at the end
+// ul.prepend(li)  //adds at the start
+ul.before(p) //before sibling element
+// ul.after(p) //after sibling element
+
+
+// Deletion of an element in DOM
+ul.remove();
