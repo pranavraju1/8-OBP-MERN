@@ -72,14 +72,78 @@
 
 
 
-let form = document.querySelector('form');
-let div = document.querySelector('div');
-let p = document.querySelector('p');
-form.addEventListener('click', ()=>alert("form is clicked"))
-div.addEventListener('click', ()=>alert("div is clicked"))
-p.addEventListener('click', ()=>alert("p is clicked"))
+// let form = document.querySelector('form');
+// let div = document.querySelector('div');
+// let p = document.querySelector('p');
 
-// Event Bubbling
+// function eventBubling(){
+//     form.addEventListener('click', ()=>alert("form is clicked"));
+//     div.addEventListener('click', ()=>alert("div is clicked"));
+//     p.addEventListener('click', ()=>alert("p is clicked"));
+// }
+
+// Event Bubbling (false)
 // When an event happens on an elemet, it first runs the 
 // handlers on it, then its parents, then all the way up to 
 // it ancestors
+
+
+// function eventCapturing(){
+//     form.addEventListener('click', ()=>alert("form is clicked"), true);
+//     div.addEventListener('click', ()=>alert("div is clicked"), true);
+//     p.addEventListener('click', ()=>alert("p is clicked"),true);
+// }
+
+// Event Capturing
+// event moves from ancestor/parent to the child
+
+
+
+
+// function eventBubling(){
+//     form.addEventListener('click', ()=>alert("form is clicked"));
+//     div.addEventListener('click', (e)=>{
+//         // e.stopPropagation();
+//         alert("div is clicked")
+//     });
+//     p.addEventListener('click', (e)=>{
+
+//         // this will stop the propogation of event
+//         // e.stopPropagation();
+//         alert("p is clicked")
+//     });
+// }
+
+// eventBubling()
+
+
+// task when i click on add new item a new li element should be
+// added in the list for example
+// New item 1
+// New item 2
+// New item 3
+// New item 4
+// New item 5
+
+
+
+let add = document.querySelector('#add');
+let todoList = document.querySelector('#todo-list')
+let count = 0;
+add.addEventListener('click',()=>{
+    let li = document.createElement('li');
+    count++;
+    li.textContent = `New item ${count}`;
+    todoList.append(li);
+})
+
+todoList.addEventListener('click',(e)=>{
+    if(e.target.tagName == "LI"){
+        // console.log(e.target.classList)
+        e.target.classList.toggle('done')
+    }
+})
+
+// Event Delegation -> when we attach a single eventlistner 
+// to the parent element and then target its children.
+// instead of assigning multiple listners to its children
