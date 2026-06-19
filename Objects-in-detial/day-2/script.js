@@ -111,28 +111,28 @@
 
 
 
-function BanckAccount(owner, balance){
-    this.owner = owner;
-    this.balance = balance;
+// function BanckAccount(owner, balance){
+//     this.owner = owner;
+//     this.balance = balance;
 
-    this.checkBalance = function(){
-        return this.owner + " balance is: " +  this.balance
-    }
+//     this.checkBalance = function(){
+//         return this.owner + " balance is: " +  this.balance
+//     }
 
-    this.deposit = function(amount){
-        this.balance = this.balance + amount;
-    }
+//     this.deposit = function(amount){
+//         this.balance = this.balance + amount;
+//     }
 
-    this.withdraw = function(amount){
-        if(amount < this.balance){
-            this.balance = this.balance - amount;
-        }else{
-            return "insufficient balance"
-        }
-    }
-}
+//     this.withdraw = function(amount){
+//         if(amount < this.balance){
+//             this.balance = this.balance - amount;
+//         }else{
+//             return "insufficient balance"
+//         }
+//     }
+// }
 
-const acc1 = new BanckAccount("pranav", 10000);
+// const acc1 = new BanckAccount("pranav", 10000);
 // console.log(acc1.checkBalance());
 // console.log(acc1.deposit(500));
 // console.log(acc1.checkBalance());
@@ -142,5 +142,62 @@ const acc1 = new BanckAccount("pranav", 10000);
 // acc1.balance = 100000000
 // console.log(acc1.checkBalance())
 
-const deposit1 = acc1.deposit.bind(acc1);
+// const deposit1 = acc1.deposit.bind(acc1);
 
+
+// function Player(name){
+//     this.name = name;
+//     this.score = 0;
+//     this.addPoints = function(points){
+//         this.score = this.score + points;   
+//     }
+// }
+
+// let player1 = new Player("pranav")
+// let player1 = new Player("raju")
+// console.log(player1)
+
+
+
+// function Car(brand, model){
+//     this.brand = brand;
+//     this.model = model;
+// }
+
+// Car.prototype.displayInfo = function(){
+//     return this.brand + " " + this.model
+// }
+
+// let car1 = new Car("Maruthi", "swift")
+// let car2 = new Car("Maruthi", "dezire")
+// let car3 = new Car("Maruthi", "800")
+// let car4 = new Car("Maruthi", "alto")
+// console.log(car1.displayInfo());
+// console.log(car1, car2, car3, car4)
+
+// each object instace created using constructor func gets its own instance copy of every method
+// this can be memory-insufficient if you create 100's of objects
+// Prototype allows us to share methods accross all instances w/o duplicating them.
+// console.log(car1.displayInfo())
+
+
+
+
+// function Animal(name){
+//     this.name = name;
+//     this.species = "Generic Animal"
+// }
+
+// Animal.prototype.makeSound = function(){
+//     return this.name + " makes a sound"
+// }
+
+// Animal.prototype.setAge = function(value){
+//     this.age = value
+// }
+// const dog = new Animal("buddy");
+
+// console.log(dog.makeSound())
+// dog.setAge(5)
+// console.log(dog.age)
+// console.log(dog)
