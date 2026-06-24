@@ -12,18 +12,20 @@
   </style>
 </head>
 <body class="bg-gray-900 text-white p-6 max-w-4xl mx-auto">
-  
+ 
   <!-- Header -->
   <h1 class="text-3xl font-bold mb-6 flex items-center gap-3">
     Recipe Roulette <span class="text-2xl">🎲🍳</span>
   </h1>
 
+
   <div class="grid md:grid-cols-2 gap-8">
+
 
     <!-- FORM -->
     <div class="bg-gray-800 p-6 rounded-lg">
       <h2 class="text-xl mb-4 font-semibold">Add Recipe</h2>
-      
+     
       <form id="recipeForm">
         <div class="mb-4">
           <label>Name:</label>
@@ -31,17 +33,20 @@
           <span id="nameError" class="error text-sm"></span>
         </div>
 
+
         <div class="mb-4">
           <label>Ingredients:</label>
           <textarea id="ingredients" class="w-full p-2 bg-gray-700 rounded mt-1" required></textarea>
           <span id="ingError" class="error text-sm"></span>
         </div>
 
+
         <div class="mb-4">
           <label>Time (min):</label>
           <input id="time" type="number" min="5" class="w-full p-2 bg-gray-700 rounded mt-1" required>
           <span id="timeError" class="error text-sm"></span>
         </div>
+
 
         <div class="mb-4">
           <label>Difficulty:</label><br>
@@ -50,6 +55,7 @@
           <label class="ml-4"><input type="radio" name="diff" value="Hard" required> Hard</label>
           <span id="diffError" class="error text-sm"></span>
         </div>
+
 
         <div class="mb-4">
           <label>Category:</label><br>
@@ -60,12 +66,14 @@
           <span id="catError" class="error text-sm"></span>
         </div>
 
-        <button id="addBtn" type="submit" disabled 
+
+        <button id="addBtn" type="submit" disabled
                 class="w-full bg-green-500 hover:bg-green-600 p-2 rounded font-semibold">
           Add Recipe
         </button>
       </form>
     </div>
+
 
     <!-- RECIPES -->
     <div>
@@ -76,9 +84,11 @@
         </button>
       </div>
 
+
       <div id="recipes" class="space-y-3 mb-6">
         <!-- Recipes appear here -->
       </div>
+
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="bg-gray-800 p-4 rounded-lg">
@@ -93,11 +103,13 @@
     </div>
   </div>
 
+
   <script>
     // === DATA ===
     let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     let recent = JSON.parse(localStorage.getItem('recent')) || [];
+
 
     // === DOM ===
     const form = document.getElementById('recipeForm');
@@ -107,18 +119,27 @@
     const addBtn = document.getElementById('addBtn');
     const spinBtn = document.getElementById('spinBtn');
 
+
     // === VALIDATION ===
-    // name.length dhould be greater than 3
-    // ingredients should not be empty
-    // time not less than 5 minutes
-    // radio and checkbox should be selected
-    function validate() {}
+    function validate() {
+      const name = document.getElementById('name').value.length >= 3;
+      const ingredients = document.getElementById('ingredients').value.trim();
+      const time = parseInt(document.getElementById('time').value) >= 5;
+      const diff = document.querySelector('input[name="diff"]:checked');
+      const cat = document.querySelectorAll('input[name="cat"]:checked').length > 0;
+
+
+      addBtn.disabled = !(name && ingredients && time && diff && cat);
+      return name && ingredients && time && diff && cat;
+    }
+
 
     // === CREATE RECIPE CARD ===
     function createCard(recipe) {
       const div = document.createElement('div');
       div.className = 'bg-gray-800 p-4 rounded-lg';
       div.dataset.id = recipe.id;
+
 
       div.innerHTML = `
         <div class="flex justify-between items-start mb-2">
@@ -137,77 +158,115 @@
       return div;
     }
 
-    // all the recipes should be rendered inside recipesDiv
-    // show the count value in #count
-    // add Favorites selected in Favorites div
-    // add atleast 5 in recently cooked inside recent div
-    //call saveData
+
     // === RENDER ===
     function render() {
       // All recipes
-
+      recipesDiv.innerHTML = '';
+      recipes.forEach(recipe => recipesDiv.appendChild(createCard(recipe)));
+     
       // Count
-    
+      document.getElementById('count').textContent = recipes.length;
+      spinBtn.disabled = recipes.length === 0;
+
 
       // Favorites
-    
+      favoritesDiv.innerHTML = favorites.map(id => {
+        const r = recipes.find(r => r.id === id);
+        return r ? `<div class="text-sm">${r.name} ⭐</div>` : '';
+      }).join('');
+
 
       // Recent (last 5)
+      recentDiv.innerHTML = recent.slice(0,5).map(id => {
+        const r = recipes.find(r => r.id === id);
+        return r ? `<div class="text-sm">${r.name}</div>` : '';
+      }).join('');
 
-    //   saveData();
+
+      saveData();
     }
 
 
-    // === SAVE === data in local strorage
-    function saveData() {}
+    // === SAVE ===
+    function saveData() {
+      localStorage.setItem('recipes', JSON.stringify(recipes));
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      localStorage.setItem('recent', JSON.stringify(recent));
+    }
 
 
-    // create recipe object with {id, name, ingredients, time, difficulty, categories  
-    // and push inside recipes
-    // clear form
-    // call render function
     // === ACTIONS ===
     function addRecipe() {
-    //   render();
+      const recipe = {
+        id: Date.now().toString(),
+        name: document.getElementById('name').value,
+        ingredients: document.getElementById('ingredients').value,
+        time: document.getElementById('time').value,
+        difficulty: document.querySelector('input[name="diff"]:checked').value,
+        categories: Array.from(document.querySelectorAll('input[name="cat"]:checked')).map(cb => cb.value)
+      };
+      recipes.push(recipe);
+      form.reset();
+      render();
     }
 
 
-    // remonve the recipe from recipes, favorites and recent and call render()
     function deleteRecipe(id) {
-    //   render();
+      recipes = recipes.filter(r => r.id !== id);
+      favorites = favorites.filter(f => f !== id);
+      recent = recent.filter(r => r !== id);
+      render();
     }
 
-    // toggle the fav selected by the user and call render()
+
     function toggleFav(id) {
-
-    //   render();
+      const idx = favorites.indexOf(id);    // Find position
+      if (idx > -1) favorites.splice(idx, 1);   // Remove if exists
+      else favorites.push(id);  // Add if doesn't exist
+      render();
     }
 
-    // add to the start of recent list
-    // if length is greater than 5 then only 5 should be visible
+
     function cook(id) {
+      recent.unshift(id);   //Add to START of recent list
 
-    //   render();
+
+      if (recent.length > 5) recent = recent.slice(0,5);    //Check if more than 5 -> Keep only first 5
+
+
+
+
+
+
+      render();
     }
+
 
     // === SPIN WHEEL ===
-    //on clicking the button it spins the wheel and selects a recipe in random and cooks it 
     spinBtn.onclick = () => {
-
-        // cook(recipe.id);
-        // Simple animation
-        const card = recipesDiv.querySelector(`[data-id="${recipe.id}"]`);
-        if (card) {
-            card.classList.add('spin');
-            setTimeout(() => card.classList.remove('spin'), 500);
-        }
+      const randIdx = Math.floor(Math.random() * recipes.length);
+      const recipe = recipes[randIdx];
+      cook(recipe.id);
+     
+      // Simple animation
+      const card = recipesDiv.querySelector(`[data-id="${recipe.id}"]`);
+      if (card) {
+        card.classList.add('spin');
+        setTimeout(() => card.classList.remove('spin'), 500);
+      }
     };
 
+
     // === EVENT DELEGATION ===
-    // targeting the cards inside the recipe div and calling the respective fucntions
-    // like cook, toggleFav, deleteRecipe
     recipesDiv.addEventListener('click', (e) => {
+      const id = e.target.closest('[data-id]').dataset.id;
+     
+      if (e.target.classList.contains('cook')) cook(id);
+      if (e.target.classList.contains('fav')) toggleFav(id);
+      if (e.target.classList.contains('del')) deleteRecipe(id);
     });
+
 
     // === FORM EVENTS ===
     form.addEventListener('input', validate);
@@ -216,8 +275,10 @@
       if (validate()) addRecipe();
     };
 
+
     // === START ===
     render();
   </script>
 </body>
 </html>
+
