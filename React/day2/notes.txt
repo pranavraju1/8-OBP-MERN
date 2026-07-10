@@ -1,0 +1,10 @@
+Prop are like functional paramenters for components - they allow you to pass data 
+from parent to child
+
+porp has one way data flow
+
+porp can be of any datatype: string, number, boolean , array, obj, function and JSX
+
+A child cannot dirently modify the parents Prop. ie prop is a read only element
+
+the children key-word is reserved for passing html data as prop in a component
