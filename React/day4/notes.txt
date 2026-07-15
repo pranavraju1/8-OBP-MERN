@@ -1,0 +1,22 @@
+we saw that when we try to update a value using normal JS variables the value gets updated
+but it is not reflected on the screen, this is because the compoenent is not re-rendering 
+
+unlike the normal HTML, JS when we update here the whole page re-renders this causes a lot of issues
+as comoponents and parts which do not need re-render also re-render
+
+react fixed this issue by only re-rendering that compoenent which needs to updated
+
+This is where State comes in.
+State is comoponents memory, its special data that
+1. triggers a re-render of that compoenent when it changes (solving the scre update problem)
+2. persist between renders 
+
+# Hooks
+hooks are special functions that let you "hook into" React features
+we had class comoponents before but then we transtioned into functional comoponents
+hooks play a mazor role in making function comoponents functional
+
+Rules of Hooks
+1. Only call hooks at the top of the function compoenent
+    a. not inside a loop, conditions, nested function, try catch, event handlers etc
+2. Only call hooks inside your functional compoenent
