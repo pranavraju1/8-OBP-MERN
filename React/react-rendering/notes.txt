@@ -1,0 +1,87 @@
+<div id="app">
+    <h1>Hello</h1>    
+    <p>Welcome</p>    
+</div>
+
+Document -> div #app -> h1 -> "Hello"
+                     -> p  -> "Welcome"
+
+const h1 = document.querySelector("h1");
+h1.textContext = "Hello world"
+
+Q why is the Real DOM expensive
+Ans Dom operation are relatively slow bc:
+1. Browser must update the DOM tree
+2. Browser recalculates styles
+3. Browser recalculates laylot
+4. Browser repaints pixels on screen
+
+
+{
+    type: "div",
+    props:{
+        id: "app"
+    },
+    children:{
+        type: "h1",
+        children: ["Hello"]
+    }
+}
+
+
+
+Virtual DOM
+its a lightwieght JS representation of the Real DOM.
+Instead of immediately changing the Browser DOM, React creates a Virtual copy
+The copy exits entirely in the memory
+
+# Working of VOD
+
+1. <h1>Hello</h1>
+
+2. React creates a copy
+{
+    type: "h1"
+    children: ["Hello"]
+}
+
+3. Later the State changes react creates a new VOD
+{
+    type: "h1"
+    children: ["Hello World"]
+}
+
+4. The 2 DOM's that are created are now compared -> it detects that the text "Hello" changes to "Hello world"
+5. it Will only update that particular part of the Real DOM
+
+
+Diffing -> Its process where the Two DOMs are compared with each other to find the difference between them
+
+Reconciliation -> Its an algorithm that react uses to update the Real DOM 
+after finding the difference using Diffing
+
+# the full rendering process
+
+State changes   ->  New VOD ->  Diffing ->  Reconciliation  ->  Real DOM (changes reflected) 
+
+React Fibre -> Home Work
+
+
+
+# Key
+
+<ul>
+    <li key = 0 >apple</li>
+    <li key = 1 >banana</li>
+    <li key = 2>Kiwi</li>
+    <li key = 3>watermelon</li>
+</ul>
+
+<ul>
+    <li key = 0 >apple</li>
+    <li key = 1 >banana</li>
+    <li key = 2>watermelon</li>
+</ul>
+
+Note: the key value should be unique for the the elements that are repeating of maped using a list
+these key values should be fixed to that element ie. avoid using index of the array as the key for that element
