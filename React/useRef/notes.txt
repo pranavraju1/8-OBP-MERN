@@ -1,0 +1,5 @@
+1. if we update the value of ref it does not trigger a rerender
+2. ref presist/save the value betweem render (ie rerender does not effect ref)
+3. ref can be used to target DOM elements as they persist the value through renders 
+also you can directly target these elements and modify them to avoid componet re-renders
+4. to store presistant values use ref insted of state when you dont want to show the value on the screen
