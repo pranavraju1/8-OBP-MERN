@@ -75,18 +75,6 @@ const App = () => {
   });
 };
 
-  const deleteTodo = (todo) => {
-  axios.delete(`http://localhost:3000/todo/${todo._id}`)
-    .then(() => {
-      setTodos((prevTodos) =>
-        prevTodos.filter((currentTodo) => currentTodo._id !== todo._id)
-      );
-    })
-    .catch((err) => {
-      console.error("Failed to delete todo:", err);
-    });
-};
-
 
   return (
     <div>
@@ -107,7 +95,7 @@ const App = () => {
               }
             } >{todo.task}</span>
             <button onClick={()=>editTodo(todo)}>Edit</button>
-           <button onClick={() => deleteTodo(todo)}>Delete</button>
+            <button>Delete</button>
         </div>
       ))}
 
